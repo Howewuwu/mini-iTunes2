@@ -30,7 +30,8 @@ class DetailViewController: UIViewController {
             collectionNameLabel.text = item.collectionName
             artistNameLabel.text = item.artistName
             trackNameLabel.text = item.trackName
-            releaseDateLabel.text = formatDate(item.releaseDate)
+            let releaseDate = formatDate(item.releaseDate)
+            releaseDateLabel.text = "發行日期 : \(releaseDate)"
             
             Search.shared.searchImage(from: item.artworkUrl100) { result in
                 switch result {
@@ -45,23 +46,23 @@ class DetailViewController: UIViewController {
         }
         
         if let artistName = selectedItem?.artistName {
-            artistPreviewButton.setTitle("\(artistName)預覽", for: .normal)
+            artistPreviewButton.setTitle("歌手預覽：\(artistName) >", for: .normal)
         }
         
         if let albumName = selectedItem?.collectionName {
-            albumPreviewButton.setTitle("\(albumName)預覽", for: .normal)
+            albumPreviewButton.setTitle("專輯預覽：\(albumName) >", for: .normal)
         }
         
         if let trackName = selectedItem?.trackName {
-            trackPreviewButton.setTitle("\(trackName)預覽", for: .normal)
+            trackPreviewButton.setTitle("歌曲預覽：\(trackName) >", for: .normal)
         }
         
-        fetchSongDetails(trackId: selectedItem!.trackId)
+        fetchSongTrackId(trackId: selectedItem!.trackId)
         
         
     }
     
-    func formatDate(_ dateString: String) -> String{
+    func formatDate(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyy-MM-dd'T'HH:mm:ssZ"
         if let date = dateFormatter.date(from: dateString) {
@@ -72,45 +73,46 @@ class DetailViewController: UIViewController {
         }
     }
     
-    func fetchSongDetails(trackId: Int) {
+    func fetchSongTrackId(trackId: Int) {
         Search.shared.lookup(trackId: trackId) { result in
             switch result {
             case .success(let item):
                 DispatchQueue.main.async {
-                    // 更新 UI 以顯示取得的歌曲信息
-                    print("TTTTTHHHHIIIIISSSS IIIIISSSS\(item)")
-                    self.trackIdLabel.text = String(item.trackId)
+                    let trackIdNum = String(item.trackId)
+                    self.trackIdLabel.text = "ID:\(trackIdNum)"
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.trackIdLabel.text = "未查找到歌曲ID"
+                }
             }
         }
     }
     
     
-    @IBAction func artistPreviewButtonTapped(_ sender: UIButton){
+    @IBAction func artistPreviewButtonTapped(_ sender: UIButton) {
         if let urlString = selectedItem?.artistViewUrl {
-            performSegue(withIdentifier: "showPreview", sender: urlString)
+            openUrlInSafari(urlString: urlString)
         }
     }
     
     @IBAction func albumPreviewButtonTapped(_ sender: UIButton) {
         if let urlString = selectedItem?.collectionViewUrl {
-            performSegue(withIdentifier: "showPreview", sender: urlString)
+            openUrlInSafari(urlString: urlString)
         }
     }
     
     @IBAction func trackPreviewButtonTapped(_ sender: UIButton) {
         if let urlString = selectedItem?.previewUrl {
-            performSegue(withIdentifier: "showPreview", sender: urlString)
+            openUrlInSafari(urlString: urlString)
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPreview",
-           let previewVC = segue.destination as? PreviewViewController,
-           let urlString = sender as? String {
-            previewVC.urlString = urlString
+    func openUrlInSafari(urlString: String) {
+        if let url = URL(string: urlString) {
+            let safariViewController = SFSafariViewController(url: url)
+            present(safariViewController, animated: true, completion: nil)
         }
     }
     

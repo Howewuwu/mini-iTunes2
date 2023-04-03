@@ -17,7 +17,6 @@
 		9C0FB3C629C9F23D00DFFED1 /* iTunesStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FB3C529C9F23D00DFFED1 /* iTunesStruct.swift */; };
 		9C0FB3C829CB77B800DFFED1 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FB3C729CB77B800DFFED1 /* Search.swift */; };
 		9C0FB3CC29D9DA2500DFFED1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FB3CB29D9DA2500DFFED1 /* DetailViewController.swift */; };
-		9C0FB3CE29D9DA8700DFFED1 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FB3CD29D9DA8700DFFED1 /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		9C0FB3C529C9F23D00DFFED1 /* iTunesStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesStruct.swift; sourceTree = "<group>"; };
 		9C0FB3C729CB77B800DFFED1 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		9C0FB3CB29D9DA2500DFFED1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		9C0FB3CD29D9DA8700DFFED1 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 			children = (
 				9C0FB3A929C9D80B00DFFED1 /* ViewController.swift */,
 				9C0FB3CB29D9DA2500DFFED1 /* DetailViewController.swift */,
-				9C0FB3CD29D9DA8700DFFED1 /* PreviewViewController.swift */,
 				9C0FB3BF29C9EE9600DFFED1 /* musicCell.swift */,
 			);
 			path = View;
@@ -176,7 +173,6 @@
 				9C0FB3C829CB77B800DFFED1 /* Search.swift in Sources */,
 				9C0FB3C029C9EE9600DFFED1 /* musicCell.swift in Sources */,
 				9C0FB3CC29D9DA2500DFFED1 /* DetailViewController.swift in Sources */,
-				9C0FB3CE29D9DA8700DFFED1 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
