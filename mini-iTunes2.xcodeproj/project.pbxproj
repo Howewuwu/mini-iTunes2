@@ -13,6 +13,11 @@
 		9C0FB3AD29C9D80B00DFFED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FB3AB29C9D80B00DFFED1 /* Main.storyboard */; };
 		9C0FB3AF29C9D80D00DFFED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FB3AE29C9D80D00DFFED1 /* Assets.xcassets */; };
 		9C0FB3B229C9D80D00DFFED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FB3B029C9D80D00DFFED1 /* LaunchScreen.storyboard */; };
+		9C0FB3C029C9EE9600DFFED1 /* musicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FB3BF29C9EE9600DFFED1 /* musicCell.swift */; };
+		9C0FB3C629C9F23D00DFFED1 /* iTunesStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FB3C529C9F23D00DFFED1 /* iTunesStruct.swift */; };
+		9C0FB3C829CB77B800DFFED1 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FB3C729CB77B800DFFED1 /* Search.swift */; };
+		9C0FB3CC29D9DA2500DFFED1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FB3CB29D9DA2500DFFED1 /* DetailViewController.swift */; };
+		9C0FB3CE29D9DA8700DFFED1 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FB3CD29D9DA8700DFFED1 /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		9C0FB3AE29C9D80D00DFFED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C0FB3B129C9D80D00DFFED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C0FB3B329C9D80D00DFFED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C0FB3BF29C9EE9600DFFED1 /* musicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicCell.swift; sourceTree = "<group>"; };
+		9C0FB3C529C9F23D00DFFED1 /* iTunesStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesStruct.swift; sourceTree = "<group>"; };
+		9C0FB3C729CB77B800DFFED1 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		9C0FB3CB29D9DA2500DFFED1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9C0FB3CD29D9DA8700DFFED1 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,34 @@
 			children = (
 				9C0FB3A529C9D80B00DFFED1 /* AppDelegate.swift */,
 				9C0FB3A729C9D80B00DFFED1 /* SceneDelegate.swift */,
-				9C0FB3A929C9D80B00DFFED1 /* ViewController.swift */,
 				9C0FB3AB29C9D80B00DFFED1 /* Main.storyboard */,
+				9C0FB3C929D85E0B00DFFED1 /* View */,
+				9C0FB3CA29D8610F00DFFED1 /* Model */,
+				9C0FB3C729CB77B800DFFED1 /* Search.swift */,
 				9C0FB3AE29C9D80D00DFFED1 /* Assets.xcassets */,
 				9C0FB3B029C9D80D00DFFED1 /* LaunchScreen.storyboard */,
 				9C0FB3B329C9D80D00DFFED1 /* Info.plist */,
 			);
 			path = "mini-iTunes2";
+			sourceTree = "<group>";
+		};
+		9C0FB3C929D85E0B00DFFED1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C0FB3A929C9D80B00DFFED1 /* ViewController.swift */,
+				9C0FB3CB29D9DA2500DFFED1 /* DetailViewController.swift */,
+				9C0FB3CD29D9DA8700DFFED1 /* PreviewViewController.swift */,
+				9C0FB3BF29C9EE9600DFFED1 /* musicCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C0FB3CA29D8610F00DFFED1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C0FB3C529C9F23D00DFFED1 /* iTunesStruct.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +170,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0FB3AA29C9D80B00DFFED1 /* ViewController.swift in Sources */,
+				9C0FB3C629C9F23D00DFFED1 /* iTunesStruct.swift in Sources */,
 				9C0FB3A629C9D80B00DFFED1 /* AppDelegate.swift in Sources */,
 				9C0FB3A829C9D80B00DFFED1 /* SceneDelegate.swift in Sources */,
+				9C0FB3C829CB77B800DFFED1 /* Search.swift in Sources */,
+				9C0FB3C029C9EE9600DFFED1 /* musicCell.swift in Sources */,
+				9C0FB3CC29D9DA2500DFFED1 /* DetailViewController.swift in Sources */,
+				9C0FB3CE29D9DA8700DFFED1 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
