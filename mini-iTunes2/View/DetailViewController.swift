@@ -26,6 +26,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateButtonColor()
+        
         if let item = selectedItem{
             collectionNameLabel.text = item.collectionName
             artistNameLabel.text = item.artistName
@@ -90,6 +92,25 @@ class DetailViewController: UIViewController {
         }
     }
     
+    func updateButtonColor() {
+        if traitCollection.userInterfaceStyle == .dark {
+            // 按鈕顏色為深色模式
+            albumPreviewButton.tintColor = .lightGray
+            artistPreviewButton.tintColor = .lightGray
+            trackPreviewButton.tintColor = .lightGray
+        } else {
+            // 按鈕顏色為亮色模式
+            albumPreviewButton.tintColor = .darkGray
+            artistPreviewButton.tintColor = .darkGray
+            trackPreviewButton.tintColor = .darkGray
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateButtonColor()
+    }
+
     
     @IBAction func artistPreviewButtonTapped(_ sender: UIButton) {
         if let urlString = selectedItem?.artistViewUrl {
